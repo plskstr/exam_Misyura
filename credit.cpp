@@ -1,10 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int SumEven(int* arr);
 int SumOdd(int* arr);
-void IsValid(int sum);
+int SumEven(int* arr);
 bool IsCorrect(const long long& number);
+void IsValid(int sum);
+void AlgorithmLuhn(long long& number);
 int * FormArr(const long long& number);
 
 int main()
@@ -39,7 +40,6 @@ int SumEven(int * arr)
 	return sum;
 }
 
-
 bool IsCorrect(const long long& number)
 {
 	if (number / 10E14 < 1 || number / 10E14 > 9 || !cin)
@@ -52,12 +52,22 @@ bool IsCorrect(const long long& number)
 
 	return true;
 }
+
 void IsValid(int sum)
 {
 	cout << "Number of your card is " << (sum % 10 == 0 ? "" : "in") << "valid.\n";
 }
 
+void AlgorithmLuhn(long long& number)
+{
+	int* digits = FormArr(number);
 
+	int sum = 0;
+	sum += SumEven(digits);
+	sum += SumOdd(digits);
+
+	IsValid(sum);
+}
 
 int * FormArr(const long long& number)
 {
