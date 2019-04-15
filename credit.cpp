@@ -3,6 +3,8 @@ using namespace std;
 
 int SumOdd(int* arr);
 int SumEven(int* arr);
+bool IsCorrect(const long long& number);2
+
 
 int main()
 {
@@ -34,5 +36,19 @@ int SumEven(int * arr)
 	}
 
 	return sum;
+}
+
+
+bool IsCorrect(const long long& number)
+{
+	if (number / 10E14 < 1 || number / 10E14 > 9 || !cin)
+	{
+		cin.clear();
+		while (cin.get() != '\n')
+			continue;
+		return false;
+	}
+
+	return true;
 }
 
