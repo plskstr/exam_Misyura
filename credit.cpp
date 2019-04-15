@@ -2,6 +2,7 @@
 using namespace std;
 
 int SumEven(int* arr);
+int SumOdd(int* arr);
 
 int main()
 {
@@ -22,6 +23,14 @@ int SumEven(int * arr)
 			sum += arr[i] / 10;
 		}
 	}
+
+	return sum;
+}
+int SumOdd(int * arr)
+{
+	int sum = 0;
+	for (int i = 0; i < 16; i += 2)
+		sum += arr[i];
 
 	return sum;
 }
