@@ -10,8 +10,25 @@ int * FormArr(const long long& number);
 
 int main()
 {
+	long long number;
+
+	do
+	{
+		cout << "Enter 16-digits card number.\n";
+		cin >> number;
+		if (!IsCorrect(number))
+		{
+			cout << "Incorrect input.\n";
+			continue;
+		}
+		break;
+	} while (true);
+
+	AlgorithmLuhn(number);
+
 	system("pause");
 	return 0;
+
 }
 
 int SumOdd(int * arr)
