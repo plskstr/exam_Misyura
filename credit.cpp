@@ -5,7 +5,8 @@ int SumOdd(int* arr);
 int SumEven(int* arr);
 bool IsCorrect(const long long& number);
 void IsValid(int sum);
-void AlgorithmLuhn(long long& number);2
+void AlgorithmLuhn(long long& number);
+int * FormArr(const long long& number);
 
 int main()
 {
@@ -39,7 +40,6 @@ int SumEven(int * arr)
 	return sum;
 }
 
-
 bool IsCorrect(const long long& number)
 {
 	if (number / 10E14 < 1 || number / 10E14 > 9 || !cin)
@@ -67,4 +67,19 @@ void AlgorithmLuhn(long long& number)
 	sum += SumOdd(digits);
 
 	IsValid(sum);
+}
+
+int * FormArr(const long long& number)
+{
+	int* digits = new int[16];
+	cout << number << endl;
+	long long temp = number;
+	for (int i = 0; i < 16; i++, temp /= 10)
+	{
+		digits[i] = temp % 10;
+		cout << digits[i];
+	}
+	cout << endl;
+
+	return digits;
 }
