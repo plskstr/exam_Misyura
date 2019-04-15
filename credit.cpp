@@ -3,6 +3,7 @@ using namespace std;
 
 int SumEven(int* arr);
 int SumOdd(int* arr);
+void IsValid(int sum);
 
 int main()
 {
@@ -33,4 +34,9 @@ int SumOdd(int * arr)
 		sum += arr[i];
 
 	return sum;
+}
+
+void IsValid(int sum)
+{
+	cout << "Number of your card is " << (sum % 10 == 0 ? "" : "in") << "valid.\n";
 }
