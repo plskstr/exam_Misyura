@@ -3,8 +3,8 @@ using namespace std;
 
 int SumOdd(int* arr);
 int SumEven(int* arr);
-bool IsCorrect(const long long& number);2
-
+bool IsCorrect(const long long& number);
+void IsValid(int sum);
 
 int main()
 {
@@ -52,3 +52,7 @@ bool IsCorrect(const long long& number)
 	return true;
 }
 
+void IsValid(int sum)
+{
+	cout << "Number of your card is " << (sum % 10 == 0 ? "" : "in") << "valid.\n";
+}
