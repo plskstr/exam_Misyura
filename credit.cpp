@@ -5,6 +5,7 @@ int SumEven(int* arr);
 int SumOdd(int* arr);
 void IsValid(int sum);
 bool IsCorrect(const long long& number);
+int * FormArr(const long long& number);
 
 int main()
 {
@@ -54,4 +55,21 @@ bool IsCorrect(const long long& number)
 void IsValid(int sum)
 {
 	cout << "Number of your card is " << (sum % 10 == 0 ? "" : "in") << "valid.\n";
+}
+
+
+
+int * FormArr(const long long& number)
+{
+	int* digits = new int[16];
+	cout << number << endl;
+	long long temp = number;
+	for (int i = 0; i < 16; i++, temp /= 10)
+	{
+		digits[i] = temp % 10;
+		cout << digits[i];
+	}
+	cout << endl;
+
+	return digits;
 }
